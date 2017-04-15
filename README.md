@@ -10,3 +10,11 @@ This app is made using the following:
 * PHP
 * ReactJS
 * npm
+
+## Notes
+This application is a work in progress.
+Some of the desired changes are listed below:
+* Full implement the game functionality
+* Separate UI and functional components
+* Additional/custom rules for films and actors
+* Improved styling
