@@ -1,0 +1,30 @@
+{
+  "name": "reel2reel",
+  "version": "1.0.0",
+  "description": "A game linking films by actors",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danieljones740/Reel2Reel.git"
+  },
+  "keywords": [
+    "reel2reel",
+    "films",
+    "actors",
+    "imdb",
+    "omdb"
+  ],
+  "author": "Dan Jones",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danieljones740/Reel2Reel/issues"
+  },
+  "homepage": "https://github.com/danieljones740/Reel2Reel#readme",
+  "dependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  }
+}
