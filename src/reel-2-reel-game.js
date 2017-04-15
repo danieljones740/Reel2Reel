@@ -9,11 +9,11 @@ class Reel2ReelGame extends React.Component {
 
         // TODO
         var start = {
-            id: "1",
+            id: "tt0332280",
             title: "The Notebook"
         };
         var end = {
-            id: "2",
+            id: "tt0213149",
             title: "Pearl Harbour"
         };
 
