@@ -11,7 +11,9 @@
                 <h1>Reel2Reel</h1>
             </header>
             <main>
-                <p>Click the button to start a new game:</p>
+                <div class="reel2reel-wrap">
+                    <p>Click the button to start a new game:</p>
+                </div>
             </main>
         </div>
         <footer>
