@@ -12,9 +12,7 @@
             </header>
             <main>
                 <div class="reel2reel-wrap">
-                    <div id="reel2reel">
-                        <p>Click the button to start a new game:</p>
-                    </div>
+                    <div id="reel2reel"></div>
                 </div>
             </main>
         </div>
