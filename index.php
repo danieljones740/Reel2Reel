@@ -2,6 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="stylesheets/reset.css" />
+        <link rel="stylesheet" href="stylesheets/styles.css" />
         <title>Reel2Reel</title>
     </head>
     <body>
