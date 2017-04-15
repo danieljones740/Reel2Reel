@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<link rel="stylesheet" href="stylesheets/reset.css" />
 		<title>Reel2Reel</title>
 	</head>
 	<body>
