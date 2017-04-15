@@ -22,7 +22,20 @@
     color: #222;
 }
 
+
 .r2r-movie-title {
+    padding-bottom: 0.2em;
+    margin-bottom: 0.5em;
     font-size: 1.2em;
     border-bottom: 1px solid #bbb;
+}
+
+.r2r-actor {
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
+.r2r-actor-avatar {
+    width: 2.5em;
+    height: 2.5em;
 }

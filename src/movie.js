@@ -1,5 +1,6 @@
 
 var React = require('react');
+var Actor = require('./actor');
 
 class Movie extends React.Component {
     render() {
@@ -7,7 +8,7 @@ class Movie extends React.Component {
             <div className="r2r-movie">
                 <h4 className="r2r-movie-title">{this.props.title}</h4>
                 <div className="r2r-movie-actors">
-                    <p>TODO: show actors for this movie</p>
+                    { [1, 2, 3, 4].map((number) => <Actor key={number} />) }
                 </div>
             </div>
         );
