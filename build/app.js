@@ -20599,17 +20599,11 @@ class MovieList extends React.Component {
 
     render() {
 
-        // var items = [];
-
-        // for (var movie in this.props.movies) {
-        //     items.push(
-        //         <li key={movie.id}>
-        //             <Movie title={movie.title} key={movie.title} />
-        //         </li>
-        //     );
-        // }
-
-        var items = this.props.movies.map(movie => React.createElement(Movie, { title: movie.title, key: movie.title }));
+        let items = this.props.movies.map(movie => React.createElement(
+            'li',
+            null,
+            React.createElement(Movie, { title: movie.title, key: movie.title })
+        ));
 
         return React.createElement(
             'ul',
@@ -20628,9 +20622,22 @@ var React = require('react');
 class Movie extends React.Component {
     render() {
         return React.createElement(
-            'div',
-            null,
-            this.props.title
+            "div",
+            { className: "reel2reel-movie" },
+            React.createElement(
+                "h4",
+                { className: "reel2reel-movie-title" },
+                this.props.title
+            ),
+            React.createElement(
+                "div",
+                { className: "reel2reel-movie-actors" },
+                React.createElement(
+                    "p",
+                    null,
+                    "TODO: show actors for this movie"
+                )
+            )
         );
     }
 }
@@ -20649,11 +20656,11 @@ class Reel2ReelGame extends React.Component {
 
         // TODO
         var start = {
-            id: "1",
+            id: "tt0332280",
             title: "The Notebook"
         };
         var end = {
-            id: "2",
+            id: "tt0213149",
             title: "Pearl Harbour"
         };
 

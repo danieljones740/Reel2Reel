@@ -6,8 +6,10 @@ class MovieList extends React.Component {
 
     render() {
 
-        var items = this.props.movies.map((movie) =>
-            <Movie title={movie.title} key={movie.title} />
+        let items = this.props.movies.map((movie) =>
+            <li>
+                <Movie title={movie.title} key={movie.title} />
+            </li>
         );
 
         return <ul className="reel2reel-movie-list">

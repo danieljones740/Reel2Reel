@@ -3,6 +3,7 @@
     <head>
         <link rel="stylesheet" href="stylesheets/reset.css" />
         <link rel="stylesheet" href="stylesheets/styles.css" />
+        <link rel="stylesheet" href="stylesheets/reel-2-reel.css" />
         <title>Reel2Reel</title>
     </head>
     <body>
