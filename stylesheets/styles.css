@@ -1,6 +1,11 @@
 
 html {
     font: normal 16px Arial, sans-serif;
+    height: 100%;
+}
+
+body {
+    height: 100%;
 }
 
 header {
@@ -8,9 +13,20 @@ header {
     font-size: 300%;
 }
 
+.page-wrap {
+    min-height: 100%;
+    margin-bottom: -10em;
+}
+
+.page-wrap::after {
+    content: "";
+    display: block;
+}
+
 footer {
-    height: 20em;
-    padding-top: 5em;
+    height: 10em;
+    box-sizing: border-box;
+    padding-top: 3em;
     text-align: center;
     background: #333;
     color: #bbb;

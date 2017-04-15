@@ -6,12 +6,14 @@
         <title>Reel2Reel</title>
     </head>
     <body>
-        <header>
-            <h1>Reel2Reel</h1>
-        </header>
-        <main>
-            <p>Click the button to start a new game:</p>
-        </main>
+        <div class="page-wrap">
+            <header>
+                <h1>Reel2Reel</h1>
+            </header>
+            <main>
+                <p>Click the button to start a new game:</p>
+            </main>
+        </div>
         <footer>
             <p>
                 <span>Reel2Reel</span> was created by Dan and Will, with the help of numerous London pubs.
