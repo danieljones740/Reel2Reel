@@ -12,7 +12,9 @@
             </header>
             <main>
                 <div class="reel2reel-wrap">
-                    <p>Click the button to start a new game:</p>
+                    <div id="reel2reel">
+                        <p>Click the button to start a new game:</p>
+                    </div>
                 </div>
             </main>
         </div>
@@ -24,5 +26,6 @@
                 Our thanks go to <a href="http://www.omdbapi.com/" target="_blank">OMDB</a>.
             </p>
         </footer>
+        <script type="text/javascript" src="build/app.js"></script>
     </body>
 </html>
