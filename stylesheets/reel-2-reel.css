@@ -1,18 +1,28 @@
 
-.reel2reel-wrap {
+.r2r-wrap {
     padding: 2em;
     text-align: center;
 }
 
-.reel2reel-movie-list {
+.r2r-title {
+    margin-bottom: 1em;
+}
+
+.r2r-movie-list {
     width: 25em;
     margin: 0 auto;
 }
 
-.reel2reel-movie {
+.r2r-movie {
     width: 25em;
     box-sizing: border-box;
     padding: 0.5em;
+    text-align: left;
     background: #eee;
     color: #222;
+}
+
+.r2r-movie-title {
+    font-size: 1.2em;
+    border-bottom: 1px solid #bbb;
 }

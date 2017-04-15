@@ -20601,13 +20601,13 @@ class MovieList extends React.Component {
 
         let items = this.props.movies.map(movie => React.createElement(
             'li',
-            null,
+            { key: movie.id },
             React.createElement(Movie, { title: movie.title, key: movie.title })
         ));
 
         return React.createElement(
             'ul',
-            { className: 'reel2reel-movie-list' },
+            { className: 'r2r-movie-list' },
             items
         );
     }
@@ -20623,15 +20623,15 @@ class Movie extends React.Component {
     render() {
         return React.createElement(
             "div",
-            { className: "reel2reel-movie" },
+            { className: "r2r-movie" },
             React.createElement(
                 "h4",
-                { className: "reel2reel-movie-title" },
+                { className: "r2r-movie-title" },
                 this.props.title
             ),
             React.createElement(
                 "div",
-                { className: "reel2reel-movie-actors" },
+                { className: "r2r-movie-actors" },
                 React.createElement(
                     "p",
                     null,
@@ -20687,7 +20687,7 @@ class Reel2ReelGame extends React.Component {
             null,
             React.createElement(
                 'h3',
-                { className: 'reel2reel-title' },
+                { className: 'r2r-title' },
                 'Start: ',
                 React.createElement(
                     'strong',

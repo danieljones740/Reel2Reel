@@ -12,7 +12,7 @@
                 <h1>Reel2Reel</h1>
             </header>
             <main>
-                <div class="reel2reel-wrap">
+                <div class="r2r-wrap">
                     <div id="reel2reel"></div>
                 </div>
             </main>
