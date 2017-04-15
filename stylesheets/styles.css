@@ -2,3 +2,20 @@
 html {
     font: normal 16px Arial, sans-serif;
 }
+
+header {
+    text-align: center;
+    font-size: 300%;
+}
+
+footer {
+    height: 20em;
+    padding-top: 5em;
+    text-align: center;
+    background: #333;
+    color: #bbb;
+}
+
+footer p {
+    margin: 0 0 2em;
+}
