@@ -8,7 +8,8 @@ class Reel2Reel extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            active: false
+            active: false,
+            films: []
         };
         this.startGame = this.startGame.bind(this);
     }
