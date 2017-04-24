@@ -20,6 +20,14 @@ class Reel2Reel extends React.Component {
         });
     }
 
+    searchActorsForFilm(filmId) {
+        // TODO
+    }
+
+    searchFilmsForActor(actorId) {
+        // TODO
+    }
+
     render() {
         return this.state.active ? <Reel2ReelGame /> : <StartButton handleClick={this.startGame} />;
     }
