@@ -9,7 +9,6 @@ class Reel2Reel extends React.Component {
         super(props);
         this.state = {
             active: false,
-            films: []
         };
         this.startGame = this.startGame.bind(this);
     }
@@ -18,14 +17,6 @@ class Reel2Reel extends React.Component {
         this.setState({
             active: true
         });
-    }
-
-    searchActorsForFilm(filmId) {
-        // TODO
-    }
-
-    searchFilmsForActor(actorId) {
-        // TODO
     }
 
     render() {

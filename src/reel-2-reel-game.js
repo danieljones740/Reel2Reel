@@ -1,5 +1,6 @@
 
 var React = require('react');
+var Encyclopedia = require('./services/encylopedia');
 var MovieList = require('./movie-list');
 
 class Reel2ReelGame extends React.Component {
@@ -33,6 +34,16 @@ class Reel2ReelGame extends React.Component {
         // TODO
     }
 
+    searchActorsForFilm(filmId) {
+        Encyclopedia(filmId, function(response) {
+            // TODO update state.films
+        });
+    }
+
+    searchFilmsForActor(actorId) {
+        // TODO
+    }
+
     render() {
 
         return (
@@ -41,7 +52,7 @@ class Reel2ReelGame extends React.Component {
                     Start: <strong>{this.state.start.title}</strong>
                     End: <strong>{this.state.end.title}</strong>
                 </h3>
-                <MovieList movies={this.state.movies} />
+                <MovieList movies={this.state.movies} findActors={this.searchActorsForFilm} />
                 <input type="text" placeholder="search..." />
             </div>
         );
