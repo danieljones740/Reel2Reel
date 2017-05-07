@@ -22,7 +22,8 @@
                 <span>Reel2Reel</span> was created by Dan and Will, with the help of numerous London pubs.
             </p>
             <p>
-                Our thanks go to <a href="http://www.omdbapi.com/" target="_blank">OMDB</a>.
+                Our thanks go out to <a href="http://www.imdb.com" target="_blank">IMDB</a> and
+                <a href="http://www.omdbapi.com/" target="_blank">OMDB</a>.
             </p>
         </footer>
         <script type="text/javascript" src="build/app.js"></script>
