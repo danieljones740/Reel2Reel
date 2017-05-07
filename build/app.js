@@ -20586,12 +20586,22 @@ module.exports = require('./lib/React');
 var React = require('react');
 
 class Actor extends React.Component {
+
+    handleClick() {
+        // TODO show list of available movies (re-use Movie component, within SelectMovie component?)
+        return false;
+    }
+
     render() {
         // TODO add anchor element (and onclick event)
         return React.createElement(
             "div",
             { className: "r2r-actor" },
-            React.createElement("img", { className: "r2r-actor-avatar", src: this.props.image })
+            React.createElement(
+                "a",
+                { onClick: this.handleClick },
+                React.createElement("img", { className: "r2r-actor-avatar", src: this.props.image })
+            )
         );
     }
 }
