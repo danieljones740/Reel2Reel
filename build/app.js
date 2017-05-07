@@ -20674,7 +20674,7 @@ class Movie extends React.Component {
 
     componentDidMount() {
         // TODO get filmId
-        var _this = this;
+        let _this = this;
         Encyclopedia.findActorsForMovie(1, function (response) {
             _this.updateActors(response);
         });
