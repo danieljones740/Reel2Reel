@@ -37,10 +37,10 @@ class Movie extends React.Component {
     }
 
     updateActors(response) {
-        // TODO
         this.setState({
-            actors: [ { id: 1, image: "images/default-actor.png" } ]
+            actors: response.actors
         });
+        // TODO handle case where no actors are returned
     }
 }
 

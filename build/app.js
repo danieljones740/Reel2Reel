@@ -20681,10 +20681,10 @@ class Movie extends React.Component {
     }
 
     updateActors(response) {
-        // TODO
         this.setState({
-            actors: [{ id: 1, image: "images/default-actor.png" }]
+            actors: response.actors
         });
+        // TODO handle case where no actors are returned
     }
 }
 
@@ -20813,7 +20813,7 @@ const encyclopedia = {
         let xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
             if (this.readyState === 4 && this.status === 200) {
-                typeof callback === "function" && callback();
+                typeof callback === "function" && callback(JSON.parse(this.response));
             }
         };
         xhttp.open("GET", url, true);
