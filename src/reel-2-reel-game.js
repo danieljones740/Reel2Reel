@@ -35,7 +35,7 @@ class Reel2ReelGame extends React.Component {
     }
 
     searchActorsForFilm(filmId) {
-        Encyclopedia(filmId, function(response) {
+        Encyclopedia.findActorsForMovie(filmId, function(response) {
             // TODO update state.films
         });
     }

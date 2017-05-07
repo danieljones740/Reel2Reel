@@ -1,13 +1,21 @@
 
 var React = require('react');
 var Actor = require('./actor');
+var Encyclopedia = require('./services/encylopedia');
 
 class Movie extends React.Component {
+
+    componentWillMount() {
+        this.setState({
+            actors: []
+        });
+    }
+
     render() {
 
-        let actorList = this.props.actors;
-        let actors = (actorList && actorList.length)
-            ? actorList.map((actor) => <Actor key={actor.id} image={actor.image} />)
+        // let actorList = this.props.actors;
+        let actors = this.state.actors.length //(actorList && actorList.length)
+            ? this.state.actors.map((actor) => <Actor key={actor.id} image={actor.image} />)
             : <p>Loading actors...</p>;
 
         return (
@@ -18,6 +26,21 @@ class Movie extends React.Component {
                 </div>
             </div>
         );
+    }
+
+    componentDidMount() {
+        // TODO get filmId
+        var _this = this;
+        Encyclopedia.findActorsForMovie(1, function(response) {
+            _this.updateActors(response);
+        });
+    }
+
+    updateActors(response) {
+        // TODO
+        this.setState({
+            actors: [ { id: 1, image: "images/default-actor.png" } ]
+        });
     }
 }
 

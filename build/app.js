@@ -20619,12 +20619,12 @@ class MovieList extends React.Component {
         // TODO call findActors?  Move it here?
 
         // TODO make this a prop?
-        let actors = [{ id: 1, image: 'images/default-actor.png' }];
+        // let actors = []; //[{ id: 1, image: 'images/default-actor.png' }];
 
         let items = this.props.movies.map(movie => React.createElement(
             'li',
             { key: movie.id },
-            React.createElement(Movie, { title: movie.title, key: movie.title, actors: actors })
+            React.createElement(Movie, { title: movie.title, key: movie.title })
         ));
 
         return React.createElement(
@@ -20633,6 +20633,10 @@ class MovieList extends React.Component {
             items
         );
     }
+
+    // componentDidMount() {
+    //     this.props.findActors();
+    // }
 }
 
 module.exports = MovieList;
@@ -20641,12 +20645,21 @@ module.exports = MovieList;
 
 var React = require('react');
 var Actor = require('./actor');
+var Encyclopedia = require('./services/encylopedia');
 
 class Movie extends React.Component {
+
+    componentWillMount() {
+        this.setState({
+            actors: []
+        });
+    }
+
     render() {
 
-        let actorList = this.props.actors;
-        let actors = actorList && actorList.length ? actorList.map(actor => React.createElement(Actor, { key: actor.id, image: actor.image })) : React.createElement(
+        // let actorList = this.props.actors;
+        let actors = this.state.actors.length //(actorList && actorList.length)
+        ? this.state.actors.map(actor => React.createElement(Actor, { key: actor.id, image: actor.image })) : React.createElement(
             'p',
             null,
             'Loading actors...'
@@ -20667,11 +20680,28 @@ class Movie extends React.Component {
             )
         );
     }
+
+    componentDidMount() {
+        // TODO get filmId
+        var _this = this;
+        Encyclopedia.findActorsForMovie(1, function (response) {
+            window.setTimeout(function () {
+                _this.updateActors(response);
+            }, 4000);
+        });
+    }
+
+    updateActors(response) {
+        // TODO
+        this.setState({
+            actors: [{ id: 1, image: "images/default-actor.png" }]
+        });
+    }
 }
 
 module.exports = Movie;
 
-},{"./actor":181,"react":180}],185:[function(require,module,exports){
+},{"./actor":181,"./services/encylopedia":187,"react":180}],185:[function(require,module,exports){
 
 var React = require('react');
 var Encyclopedia = require('./services/encylopedia');
@@ -20709,7 +20739,7 @@ class Reel2ReelGame extends React.Component {
     }
 
     searchActorsForFilm(filmId) {
-        Encyclopedia(filmId, function (response) {
+        Encyclopedia.findActorsForMovie(filmId, function (response) {
             // TODO update state.films
         });
     }
