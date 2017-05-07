@@ -20616,11 +20616,6 @@ class MovieList extends React.Component {
 
     render() {
 
-        // TODO call findActors?  Move it here?
-
-        // TODO make this a prop?
-        // let actors = []; //[{ id: 1, image: 'images/default-actor.png' }];
-
         let items = this.props.movies.map(movie => React.createElement(
             'li',
             { key: movie.id },
@@ -20633,10 +20628,6 @@ class MovieList extends React.Component {
             items
         );
     }
-
-    // componentDidMount() {
-    //     this.props.findActors();
-    // }
 }
 
 module.exports = MovieList;
@@ -20685,9 +20676,7 @@ class Movie extends React.Component {
         // TODO get filmId
         var _this = this;
         Encyclopedia.findActorsForMovie(1, function (response) {
-            window.setTimeout(function () {
-                _this.updateActors(response);
-            }, 4000);
+            _this.updateActors(response);
         });
     }
 
