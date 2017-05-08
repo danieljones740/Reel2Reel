@@ -53,7 +53,6 @@ class Reel2ReelGame extends React.Component {
                     End: <strong>{this.state.end.title}</strong>
                 </h3>
                 <MovieList movies={this.state.movies} findActors={this.searchActorsForFilm} />
-                <input type="text" placeholder="search..." />
             </div>
         );
 
