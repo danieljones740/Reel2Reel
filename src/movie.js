@@ -13,9 +13,9 @@ class Movie extends React.Component {
 
     render() {
 
-        // let actorList = this.props.actors;
-        let actors = this.state.actors.length //(actorList && actorList.length)
-            ? this.state.actors.map((actor) => <Actor key={actor.id} image={actor.image} />)
+        let actors = this.state.actors.length
+            ? this.state.actors.map(
+                (actor) => <Actor key={actor.id} image={actor.image} select={this.props.selectActor} />)
             : <p>Loading actors...</p>;
 
         return (

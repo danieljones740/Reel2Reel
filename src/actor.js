@@ -3,8 +3,13 @@ var React = require('react');
 
 class Actor extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.handleClick = this.handleClick.bind(this);
+    }
+
     handleClick() {
-        // TODO show list of available movies (re-use Movie component, within SelectMovie component?)
+        this.props.select();
         return false;
     }
 

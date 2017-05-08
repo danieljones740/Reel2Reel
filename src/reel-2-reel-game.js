@@ -25,6 +25,8 @@ class Reel2ReelGame extends React.Component {
             selectedActor: null,
             complete: false
         };
+
+        this.selectActor = this.selectActor.bind(this);
     }
 
     addMovie(id) {
@@ -50,8 +52,8 @@ class Reel2ReelGame extends React.Component {
                     Start: <strong>{this.state.start.title}</strong>
                     End: <strong>{this.state.end.title}</strong>
                 </h3>
-                <MovieList movies={this.state.movies} />
-                <SelectMovie />
+                <MovieList movies={this.state.movies} selectActor={this.selectActor} />
+                <SelectMovie actor={this.state.selectedActor} />
             </div>
         );
 

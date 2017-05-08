@@ -1,6 +1,6 @@
 
 var React = require('react');
-var Movie = require('./movie')
+var Movie = require('./movie');
 
 class MovieList extends React.Component {
 
@@ -8,7 +8,7 @@ class MovieList extends React.Component {
 
         let items = this.props.movies.map((movie) =>
             <li key={movie.id}>
-                <Movie title={movie.title} key={movie.title} />
+                <Movie title={movie.title} key={movie.title} selectActor={this.props.selectActor} />
             </li>
         );
 
