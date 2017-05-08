@@ -4,11 +4,14 @@ const encyclopedia = {
     // Use OMDB APIs
     OMDB_URL: "http://www.omdbapi.com/",
     FIND_ACTORS_URL: "find-actors.php",
-
-    // TODO find movies
+    FIND_MOVIES_URL: "find-movies.php",
 
     findActorsForMovie: function(id, callback) {
         this.request(this.FIND_ACTORS_URL + "?film=" + id, callback);
+    },
+
+    findMoviesForActor: function(id, callback) {
+        this.request(this.FIND_MOVIES_URL + "?actor=" + id, callback)
     },
 
     request: function(url, callback) {
