@@ -1,7 +1,7 @@
 
 var React = require('react');
-var Encyclopedia = require('./services/encylopedia');
 var MovieList = require('./movie-list');
+var SelectMovie = require('./select-movie');
 
 class Reel2ReelGame extends React.Component {
 
@@ -51,6 +51,7 @@ class Reel2ReelGame extends React.Component {
                     End: <strong>{this.state.end.title}</strong>
                 </h3>
                 <MovieList movies={this.state.movies} />
+                <SelectMovie />
             </div>
         );
 
