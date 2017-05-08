@@ -1,8 +1,6 @@
 
 const encyclopedia = {
 
-    // Use OMDB APIs
-    OMDB_URL: "http://www.omdbapi.com/",
     FIND_ACTORS_URL: "find-actors.php",
     FIND_MOVIES_URL: "find-movies.php",
 
