@@ -45,7 +45,7 @@ class Reel2ReelGame extends React.Component {
     render() {
 
         return (
-            <div>
+            <div className="r2r-game">
                 <h3 className="r2r-title">
                     Start: <strong>{this.state.start.title}</strong>
                     End: <strong>{this.state.end.title}</strong>
