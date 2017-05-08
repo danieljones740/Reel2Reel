@@ -22,6 +22,7 @@ class Reel2ReelGame extends React.Component {
             start: start,
             end: end,
             movies: [ start ],
+            selectedActor: null,
             complete: false
         };
     }
@@ -32,6 +33,13 @@ class Reel2ReelGame extends React.Component {
 
     removeMovie(id) {
         // TODO
+    }
+
+    selectActor() {
+        // TODO assign ID from selected actor photo
+        this.setState({
+            selectedActor: 1
+        });
     }
 
     render() {
