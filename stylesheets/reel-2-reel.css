@@ -4,18 +4,32 @@
     text-align: center;
 }
 
+.r2r-btn-start {
+    padding: 0.5em;
+    font-size: 1em;
+    background: #a79;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+.r2r-game {
+    width: 25em;
+    margin: 0 auto;
+}
+
 .r2r-title {
     margin-bottom: 1em;
 }
 
 .r2r-movie-list {
-    width: 25em;
-    margin: 0 auto;
 }
 
 .r2r-movie {
     width: 25em;
     box-sizing: border-box;
+    margin: 0 0 0.5em;
     padding: 0.5em;
     text-align: left;
     background: #eee;
@@ -37,4 +51,12 @@
 .r2r-actor-avatar {
     width: 2.5em;
     height: 2.5em;
+}
+
+.r2r-select-movie {
+    padding: 0.5em;
+    font-size: 0.9em;
+    text-align: center;
+    background: #eee;
+    color: #bbb;
 }
