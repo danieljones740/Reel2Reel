@@ -34,16 +34,6 @@ class Reel2ReelGame extends React.Component {
         // TODO
     }
 
-    searchActorsForFilm(filmId) {
-        Encyclopedia.findActorsForMovie(filmId, function(response) {
-            // TODO update state.films
-        });
-    }
-
-    searchFilmsForActor(actorId) {
-        // TODO
-    }
-
     render() {
 
         return (
@@ -52,7 +42,7 @@ class Reel2ReelGame extends React.Component {
                     Start: <strong>{this.state.start.title}</strong>
                     End: <strong>{this.state.end.title}</strong>
                 </h3>
-                <MovieList movies={this.state.movies} findActors={this.searchActorsForFilm} />
+                <MovieList movies={this.state.movies} />
             </div>
         );
 
