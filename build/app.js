@@ -20650,7 +20650,7 @@ module.exports = MovieList;
 
 var React = require('react');
 var Actor = require('./actor');
-var Encyclopedia = require('./services/encylopedia');
+var Encyclopedia = require('./services/encyclopedia');
 
 class Movie extends React.Component {
 
@@ -20702,7 +20702,7 @@ class Movie extends React.Component {
 
 module.exports = Movie;
 
-},{"./actor":181,"./services/encylopedia":188,"react":180}],185:[function(require,module,exports){
+},{"./actor":181,"./services/encyclopedia":188,"react":180}],185:[function(require,module,exports){
 
 var React = require('react');
 var MovieList = require('./movie-list');
@@ -20810,38 +20810,63 @@ module.exports = Reel2Reel;
 },{"./reel-2-reel-game":185,"./start-button":189,"react":180}],187:[function(require,module,exports){
 
 let React = require('react');
+let Encyclopedia = require('./services/encyclopedia');
 
 class SelectMovie extends React.Component {
 
-    // TODO store options in state?
+    constructor(props) {
+        super(props);
+        this.componentDidUpdate = this.componentDidUpdate.bind(this);
+    }
+
+    componentWillMount() {
+        this.setState({
+            movies: []
+        });
+    }
 
     render() {
 
-        let contents = this.props.actor ? React.createElement(
-            "p",
+        function getMovieList(movies) {
+            return movies ? React.createElement(
+                'p',
+                null,
+                'Movies found!'
+            ) : React.createElement(
+                'p',
+                null,
+                'Loading movies...'
+            );
+        }
+
+        let contents = this.props.actor ? getMovieList(this.state.movies) : React.createElement(
+            'p',
             null,
-            "Loading movies..."
-        ) : React.createElement(
-            "p",
-            null,
-            "Select an actor"
+            'Select an actor'
         );
 
         return React.createElement(
-            "div",
-            { className: "r2r-select-movie" },
+            'div',
+            { className: 'r2r-select-movie' },
             contents
         );
     }
 
-    componentDidMount() {
-        // TODO query for movies
+    componentDidUpdate() {
+        let _this = this;
+        if (this.props.actor) {
+            Encyclopedia.findMoviesForActor(this.props.actor, function (response) {
+                _this.setState({
+                    movies: response.movies
+                });
+            });
+        }
     }
 }
 
 module.exports = SelectMovie;
 
-},{"react":180}],188:[function(require,module,exports){
+},{"./services/encyclopedia":188,"react":180}],188:[function(require,module,exports){
 
 const encyclopedia = {
 
