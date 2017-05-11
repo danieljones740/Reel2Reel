@@ -1,14 +1,29 @@
 
 let React = require('react');
+let Encyclopedia = require('./services/encylopedia');
 
 class SelectMovie extends React.Component {
 
-    // TODO store options in state?
+    constructor(props) {
+        super(props);
+    }
+
+    componentWillMount() {
+        this.setState({
+            movies: []
+        });
+    }
 
     render() {
 
+        function getMovieList() {
+            return this.state.movies
+                ? <p>Movies found!</p>
+                : <p>Loading movies...</p>;
+        }
+
         let contents = this.props.actor
-            ? <p>Loading movies...</p>
+            ? getMovieList()
             : <p>Select an actor</p>;
 
         return <div className="r2r-select-movie">
@@ -16,8 +31,14 @@ class SelectMovie extends React.Component {
         </div>
     }
 
-    componentDidMount() {
-        // TODO query for movies
+    componentDidUpdate() {
+        if (this.props.actor) {
+            Encyclopedia.findMoviesForActor(this.props.actor, function(response) {
+                this.setState({
+                    movies: response.movies
+                });
+            })
+        }
     }
 }
 
