@@ -6,7 +6,6 @@ class SelectMovie extends React.Component {
 
     constructor(props) {
         super(props);
-        this.componentDidUpdate = this.componentDidUpdate.bind(this);
     }
 
     componentWillMount() {
@@ -17,22 +16,17 @@ class SelectMovie extends React.Component {
 
     render() {
 
-        function getMovieList(movies) {
-            return movies
-                ? <p>Movies found!</p>
-                : <p>Loading movies...</p>;
-        }
-
-        let contents = this.props.actor
-            ? getMovieList(this.state.movies)
-            : <p>Select an actor</p>;
+        let contents = this.state.movies
+            ? this.state.movies.map(
+                (movie) => <p> { movie.title } </p>
+            )
+            : <p>Loading movies...</p>;
 
         return <div className="r2r-select-movie">
             { contents }
         </div>
     }
 
-    // TODO trigger this on component render, once actor is defined (don't render when no actor exists?)
     componentDidMount() {
         let _this = this;
         if (this.props.actor) {

@@ -20751,6 +20751,12 @@ class Reel2ReelGame extends React.Component {
 
     render() {
 
+        let selectMovie = this.state.selectedActor ? React.createElement(SelectMovie, { actor: this.state.selectedActor }) : React.createElement(
+            'p',
+            null,
+            'Select an actor'
+        );
+
         return React.createElement(
             'div',
             { className: 'r2r-game' },
@@ -20771,7 +20777,7 @@ class Reel2ReelGame extends React.Component {
                 )
             ),
             React.createElement(MovieList, { movies: this.state.movies, selectActor: this.selectActor }),
-            React.createElement(SelectMovie, { actor: this.state.selectedActor })
+            selectMovie
         );
     }
 }
@@ -20816,7 +20822,6 @@ class SelectMovie extends React.Component {
 
     constructor(props) {
         super(props);
-        this.componentDidUpdate = this.componentDidUpdate.bind(this);
     }
 
     componentWillMount() {
@@ -20827,22 +20832,16 @@ class SelectMovie extends React.Component {
 
     render() {
 
-        function getMovieList(movies) {
-            return movies ? React.createElement(
-                'p',
-                null,
-                'Movies found!'
-            ) : React.createElement(
-                'p',
-                null,
-                'Loading movies...'
-            );
-        }
-
-        let contents = this.props.actor ? getMovieList(this.state.movies) : React.createElement(
+        let contents = this.state.movies ? this.state.movies.map(movie => React.createElement(
             'p',
             null,
-            'Select an actor'
+            ' ',
+            movie.title,
+            ' '
+        )) : React.createElement(
+            'p',
+            null,
+            'Loading movies...'
         );
 
         return React.createElement(
@@ -20852,7 +20851,7 @@ class SelectMovie extends React.Component {
         );
     }
 
-    componentDidUpdate() {
+    componentDidMount() {
         let _this = this;
         if (this.props.actor) {
             Encyclopedia.findMoviesForActor(this.props.actor, function (response) {

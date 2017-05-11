@@ -46,6 +46,10 @@ class Reel2ReelGame extends React.Component {
 
     render() {
 
+        let selectMovie = this.state.selectedActor
+            ? <SelectMovie actor={this.state.selectedActor} />
+            : <p>Select an actor</p>;
+
         return (
             <div className="r2r-game">
                 <h3 className="r2r-title">
@@ -53,7 +57,7 @@ class Reel2ReelGame extends React.Component {
                     End: <strong>{this.state.end.title}</strong>
                 </h3>
                 <MovieList movies={this.state.movies} selectActor={this.selectActor} />
-                <SelectMovie actor={this.state.selectedActor} />
+                { selectMovie }
             </div>
         );
 
