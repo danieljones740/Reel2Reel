@@ -1,11 +1,12 @@
 
 let React = require('react');
-let Encyclopedia = require('./services/encylopedia');
+let Encyclopedia = require('./services/encyclopedia');
 
 class SelectMovie extends React.Component {
 
     constructor(props) {
         super(props);
+        this.componentDidUpdate = this.componentDidUpdate.bind(this);
     }
 
     componentWillMount() {
@@ -16,14 +17,14 @@ class SelectMovie extends React.Component {
 
     render() {
 
-        function getMovieList() {
-            return this.state.movies
+        function getMovieList(movies) {
+            return movies
                 ? <p>Movies found!</p>
                 : <p>Loading movies...</p>;
         }
 
         let contents = this.props.actor
-            ? getMovieList()
+            ? getMovieList(this.state.movies)
             : <p>Select an actor</p>;
 
         return <div className="r2r-select-movie">
@@ -31,10 +32,12 @@ class SelectMovie extends React.Component {
         </div>
     }
 
-    componentDidUpdate() {
+    // TODO trigger this on component render, once actor is defined (don't render when no actor exists?)
+    componentDidMount() {
+        let _this = this;
         if (this.props.actor) {
             Encyclopedia.findMoviesForActor(this.props.actor, function(response) {
-                this.setState({
+                _this.setState({
                     movies: response.movies
                 });
             })

@@ -1,7 +1,7 @@
 
 var React = require('react');
 var Actor = require('./actor');
-var Encyclopedia = require('./services/encylopedia');
+var Encyclopedia = require('./services/encyclopedia');
 
 class Movie extends React.Component {
 
