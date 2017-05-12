@@ -5,8 +5,8 @@
 $actor_id = $_GET['actor'];
 
 // TODO query database with $actor_id
-$films = [
-    "films" => [ [
+$movies = [
+    "movies" => [ [
             "id"        => "1",
             "title"     => "Jurassic Park",
             "year"      => "1993"
@@ -28,6 +28,6 @@ $films = [
 
 // Response
 header('Content-Type: application/json');
-echo(json_encode($films));
+echo(json_encode($movies));
 
 ?>
