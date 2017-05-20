@@ -1,5 +1,6 @@
 
 let React = require('react');
+let MovieOption = require('./movie-option');
 let Encyclopedia = require('./services/encyclopedia');
 
 class SelectMovie extends React.Component {
@@ -18,7 +19,7 @@ class SelectMovie extends React.Component {
 
         let contents = this.state.movies
             ? this.state.movies.map(
-                (movie) => <p> { movie.title } </p>
+                (movie) => <MovieOption title={movie.title} />
             )
             : <p>Loading movies...</p>;
 
