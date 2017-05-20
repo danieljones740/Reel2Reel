@@ -20650,17 +20650,26 @@ module.exports = MovieList;
 
 let React = require('react');
 
-class MovieOption extends React.Component() {
+class MovieOption extends React.Component {
 
-    // TODO add clickability
+    constructor(props) {
+        super(props);
+    }
+
     render() {
         return React.createElement(
-            'p',
+            'div',
             null,
-            this.props.title
+            React.createElement(
+                'a',
+                { onClick: this.props.select },
+                this.props.title
+            )
         );
     }
 }
+
+module.exports = MovieOption;
 
 },{"react":180}],185:[function(require,module,exports){
 
@@ -20765,9 +20774,14 @@ class Reel2ReelGame extends React.Component {
         });
     }
 
+    selectMovie() {
+        // TODO add movie, remove selected actor (and add actor elsewhere?)
+        alert('movie selected!');
+    }
+
     render() {
 
-        let selectMovie = this.state.selectedActor ? React.createElement(SelectMovie, { actor: this.state.selectedActor }) : React.createElement(
+        let selectMovie = this.state.selectedActor ? React.createElement(SelectMovie, { actor: this.state.selectedActor, select: this.selectMovie }) : React.createElement(
             'p',
             null,
             'Select an actor'
@@ -20849,7 +20863,7 @@ class SelectMovie extends React.Component {
 
     render() {
 
-        let contents = this.state.movies ? this.state.movies.map(movie => React.createElement(MovieOption, { title: movie.title })) : React.createElement(
+        let contents = this.state.movies ? this.state.movies.map(movie => React.createElement(MovieOption, { title: movie.title, select: this.props.select })) : React.createElement(
             'p',
             null,
             'Loading movies...'

@@ -44,10 +44,15 @@ class Reel2ReelGame extends React.Component {
         });
     }
 
+    selectMovie() {
+        // TODO add movie, remove selected actor (and add actor elsewhere?)
+        alert('movie selected!');
+    }
+
     render() {
 
         let selectMovie = this.state.selectedActor
-            ? <SelectMovie actor={this.state.selectedActor} />
+            ? <SelectMovie actor={this.state.selectedActor} select={this.selectMovie} />
             : <p>Select an actor</p>;
 
         return (

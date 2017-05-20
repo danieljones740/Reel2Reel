@@ -19,7 +19,7 @@ class SelectMovie extends React.Component {
 
         let contents = this.state.movies
             ? this.state.movies.map(
-                (movie) => <MovieOption title={movie.title} />
+                (movie) => <MovieOption title={movie.title} select={this.props.select} />
             )
             : <p>Loading movies...</p>;
 

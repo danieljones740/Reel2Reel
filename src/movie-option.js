@@ -1,10 +1,19 @@
 
 let React = require('react');
 
-class MovieOption extends React.Component() {
+class MovieOption extends React.Component {
 
-    // TODO add clickability
+    constructor(props) {
+        super(props)
+    }
+
     render() {
-        return <p>{this.props.title}</p>;
+        return (
+            <div>
+                <a onClick={this.props.select}>{this.props.title}</a>
+            </div>
+        );
     }
 }
+
+module.exports = MovieOption;
