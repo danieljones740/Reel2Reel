@@ -20757,6 +20757,7 @@ class Reel2ReelGame extends React.Component {
         };
 
         this.selectActor = this.selectActor.bind(this);
+        this.selectMovie = this.selectMovie.bind(this);
     }
 
     addMovie(id) {
@@ -20775,8 +20776,10 @@ class Reel2ReelGame extends React.Component {
     }
 
     selectMovie() {
-        // TODO add movie, remove selected actor (and add actor elsewhere?)
-        alert('movie selected!');
+        // TODO add movie (and add actor elsewhere?)
+        this.setState({
+            selectedActor: null
+        });
     }
 
     render() {
@@ -20863,7 +20866,7 @@ class SelectMovie extends React.Component {
 
     render() {
 
-        let contents = this.state.movies ? this.state.movies.map(movie => React.createElement(MovieOption, { title: movie.title, select: this.props.select })) : React.createElement(
+        let contents = this.state.movies ? this.state.movies.map(movie => React.createElement(MovieOption, { key: movie.id, title: movie.title, select: this.props.select })) : React.createElement(
             'p',
             null,
             'Loading movies...'
