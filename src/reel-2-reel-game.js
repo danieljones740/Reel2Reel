@@ -30,14 +30,6 @@ class Reel2ReelGame extends React.Component {
         this.selectMovie = this.selectMovie.bind(this);
     }
 
-    addMovie(id) {
-        // TODO
-    }
-
-    removeMovie(id) {
-        // TODO
-    }
-
     selectActor() {
         // TODO assign ID from selected actor photo
         this.setState({
@@ -46,9 +38,13 @@ class Reel2ReelGame extends React.Component {
     }
 
     selectMovie() {
+
         // TODO add movie (and add actor elsewhere?)
+        let movies = this.state.movies.push( { id: "6578232", title: "Space Jam" } );
+
         this.setState({
-            selectedActor: null
+            selectedActor: null,
+            movies: movies
         });
     }
 
